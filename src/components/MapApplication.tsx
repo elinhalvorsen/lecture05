@@ -2,13 +2,14 @@ import React, { MutableRefObject, useEffect, useRef } from "react";
 import { Map, View } from "ol";
 import TileLayer from "ol/layer/Tile";
 import { OSM } from "ol/source";
+import { useGeographic } from "ol/proj";
 
-const mapRef = useRef() as MutableRefObject<HTMLDivElement>;
-
+useGeographic();
 const MapApplication = () => {
+  const mapRef = useRef() as MutableRefObject<HTMLDivElement>;
   const map = new Map({
-    layers: [new TileLayer({ source: new OSM() })],
     view: new View({ center: [10, 59], zoom: 8 }),
+    layers: [new TileLayer({ source: new OSM() })],
   });
 
   useEffect(() => {
@@ -19,7 +20,10 @@ const MapApplication = () => {
       <header>
         <h1>Lecture 5 Map</h1>
       </header>
-      <div ref={mapRef}></div>
+      <nav></nav>
+      <main>
+        <div ref={mapRef}></div>
+      </main>
     </>
   );
 };

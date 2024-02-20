@@ -1,0 +1,12 @@
+* {
+  margin: unset;
+}
+#root {
+  display: grid;
+  grid-template-rows: auto auto 1fr;
+  height: 100dvh;
+}
+main {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+}
