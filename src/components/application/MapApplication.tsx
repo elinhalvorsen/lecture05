@@ -20,9 +20,9 @@ const MapApplication = () => {
       <NavBar />
       <main>
         <div ref={mapRef}></div>
-        <KommunerAside />
+        {/** <KommunerAside />
         <FylkeAside />
-        <SchoolAside />
+        <SchoolAside /> */}
       </main>
     </MapContext.Provider>
   );
