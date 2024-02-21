@@ -1,8 +1,12 @@
 import React from "react";
+import ToogleCheckbox from "../shared/ToogleCheckbox";
 const SchoolLayerCheckbox = () => {
   return (
     <>
-      <div></div>
+      <label>
+        <input type="checkbox" />
+        Show schools
+      </label>
     </>
   );
 };

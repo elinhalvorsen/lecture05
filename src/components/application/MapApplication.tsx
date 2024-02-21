@@ -7,10 +7,9 @@ import Layer from "ol/layer/Layer";
 import KommunerAside from "../kommuner/KommunerAside";
 import FylkeCheckbox from "../fylke/FylkeCheckbox";
 import FylkeAside from "../fylke/FylkeAside";
-import HandleFocusUser from "./HandleFocusUser";
 import SchoolLayerCheckbox from "../schools/SchoolLayerCheckbox";
 import SchoolAside from "../schools/SchoolAside";
-
+import FocusUser from "./FocusUser";
 const MapApplication = () => {
   const mapRef = useRef() as MutableRefObject<HTMLDivElement>;
   const [layers, setLayers] = useState<Layer[]>([
@@ -22,12 +21,10 @@ const MapApplication = () => {
   return (
     <MapContext.Provider value={{ map, setLayers, layers }}>
       <header>
-        <h1>Lecture 4 Map</h1>
+        <h1>Lecture 5 Map</h1>
       </header>
       <nav>
-        <a href={"#"} onClick={HandleFocusUser}>
-          Focus on me
-        </a>
+        <FocusUser />
         <KommunerCheckbox />
         <FylkeCheckbox />
         <SchoolLayerCheckbox />
