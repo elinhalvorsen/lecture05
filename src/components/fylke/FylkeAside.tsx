@@ -26,17 +26,17 @@ const useFylkeFeatures = () => {
 
   const [features, setFeature] = useState<FylkeFeatures[]>();
   const [viewExtent, setViewExtent] = useState(
-    map.getView().getViewStateAndExtent().extent
+    map.getView().getViewStateAndExtent().extent,
   );
 
   const layer = layers.find(
-    (l) => l.getClassName() === "fylker"
+    (l) => l.getClassName() === "fylker",
   ) as FylkeVectorLayer;
 
   const visableFeatures = useMemo(
     () =>
       features?.filter((f) => f.getGeometry()?.intersectsExtent(viewExtent)),
-    [features, viewExtent]
+    [features, viewExtent],
   );
   const handleSourceChange = () =>
     setFeature(layer?.getSource()?.getFeatures());
