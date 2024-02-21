@@ -3,6 +3,7 @@ import { MapContext } from "../context/MapContext";
 import VectorLayer from "ol/layer/Vector";
 import VectorSource from "ol/source/Vector";
 import { GeoJSON } from "ol/format";
+import ToogleCheckbox from "../shared/ToogleCheckbox";
 
 const layer = new VectorLayer({
   className: "kommuner",
@@ -23,15 +24,13 @@ const KommunerCheckbox = () => {
   }, [checked]);
   return (
     <>
-      <label>
-        <input
-          type="checkbox"
-          checked={checked}
-          onChange={(e) => setChecked(e.target.checked)}
-        />
-        {checked ? "Hide " : "Show "}
-        kommuner
-      </label>
+      <ToogleCheckbox
+        lableOff={"Hide"}
+        lableOn={"Show"}
+        title={" kommuner"}
+        isChecked={checked}
+        onChange={(e) => setChecked(e.target.checked)}
+      />
     </>
   );
 };
