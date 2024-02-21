@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import ToogleCheckbox from "../shared/ToogleCheckbox";
-import useLayer from "../shared/useLayer";
+import ToogleCheckbox from "../../shared/ToogleCheckbox";
+import useLayer from "../../map/useLayer";
 import VectorLayer from "ol/layer/Vector";
 import VectorSource from "ol/source/Vector";
 import { GeoJSON } from "ol/format";

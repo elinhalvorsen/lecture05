@@ -1,5 +1,5 @@
 import { useContext, useEffect } from "react";
-import { MapContext } from "../context/MapContext";
+import { MapContext } from "./MapContext";
 import Layer from "ol/layer/Layer";
 const useLayer = (layer: Layer, checked: boolean) => {
   const { setLayers } = useContext(MapContext);

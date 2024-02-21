@@ -1,5 +1,5 @@
 //Spørre foreleseren om denne
-import { map } from "../context/MapContext";
+import { map } from "../map/MapContext";
 import React from "react";
 
 const FocusUser = () => {

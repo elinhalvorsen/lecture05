@@ -1,8 +1,8 @@
 import React from "react";
 import FocusUser from "../application/FocusUser";
-import KommunerCheckbox from "../kommuner/KommunerCheckbox";
-import FylkeCheckbox from "../fylke/FylkeCheckbox";
-import SchoolLayerCheckbox from "../schools/SchoolLayerCheckbox";
+import KommunerCheckbox from "../layers/kommuner/KommunerCheckbox";
+import FylkeCheckbox from "../layers/fylke/FylkeCheckbox";
+import SchoolLayerCheckbox from "../layers/schools/SchoolLayerCheckbox";
 const NavBar = () => {
   return (
     <>

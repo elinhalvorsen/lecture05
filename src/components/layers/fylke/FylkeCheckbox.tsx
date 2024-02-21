@@ -1,31 +1,31 @@
-import React, { useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import VectorLayer from "ol/layer/Vector";
 import VectorSource from "ol/source/Vector";
 import { GeoJSON } from "ol/format";
-import ToogleCheckbox from "../shared/ToogleCheckbox";
-import useLayer from "../shared/useLayer";
+import ToogleCheckbox from "../../shared/ToogleCheckbox";
+import useLayer from "../../map/useLayer";
 
-const kommuneLayer = new VectorLayer({
-  className: "kommuner",
+const fylkeLayer = new VectorLayer({
+  className: "fylker",
   source: new VectorSource({
-    url: "/lecture05/kommuner.json",
+    url: "/lecture05/fylker.json",
     format: new GeoJSON(),
   }),
 });
-const KommunerCheckbox = () => {
+const FylkeCheckbox = () => {
   const [checked, setChecked] = useState(false);
-  useLayer(kommuneLayer, checked);
+  useLayer(fylkeLayer, checked);
 
   return (
     <>
       <ToogleCheckbox
         lableOff={"Hide"}
         lableOn={"Show"}
-        title={" kommuner"}
         isChecked={checked}
         onChange={(e) => setChecked(e.target.checked)}
+        title={" Fylker"}
       />
     </>
   );
 };
-export default KommunerCheckbox;
+export default FylkeCheckbox;
