@@ -14,13 +14,14 @@ const SchoolLayerCheckbox = () => {
       url: "/lecture05/schools.json",
       format: new GeoJSON(),
     }),
-    style: new Style({
-      image: new Circle({
-        stroke: new Stroke({ color: "white", width: 2 }),
-        fill: new Fill({ color: "blue" }),
-        radius: 8,
+    style: (feacture) =>
+      new Style({
+        image: new Circle({
+          stroke: new Stroke({ color: "white", width: 2 }),
+          fill: new Fill({ color: "blue" }),
+          radius: 3 + feacture.getProperties().antall_elever / 150,
+        }),
       }),
-    }),
   });
   useLayer(schoolLayer, checked);
 
