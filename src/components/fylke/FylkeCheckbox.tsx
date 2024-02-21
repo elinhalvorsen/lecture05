@@ -1,11 +1,11 @@
 import React, { useContext, useEffect, useState } from "react";
-import { MapContext } from "../context/MapContext";
 import VectorLayer from "ol/layer/Vector";
 import VectorSource from "ol/source/Vector";
 import { GeoJSON } from "ol/format";
 import ToogleCheckbox from "../shared/ToogleCheckbox";
+import useLayer from "../shared/useLayer";
 
-const layer = new VectorLayer({
+const fylkeLayer = new VectorLayer({
   className: "fylker",
   source: new VectorSource({
     url: "/lecture05/fylker.json",
@@ -14,14 +14,8 @@ const layer = new VectorLayer({
 });
 const FylkeCheckbox = () => {
   const [checked, setChecked] = useState(false);
-  const { setLayers } = useContext(MapContext);
+  useLayer(fylkeLayer, checked);
 
-  useEffect(() => {
-    if (checked) {
-      setLayers((old) => [...old, layer]);
-    }
-    return () => setLayers((old) => old.filter((l) => l !== layer));
-  }, [checked]);
   return (
     <>
       <ToogleCheckbox

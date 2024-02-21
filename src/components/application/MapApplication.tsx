@@ -2,14 +2,11 @@ import React, { MutableRefObject, useEffect, useRef, useState } from "react";
 import TileLayer from "ol/layer/Tile";
 import { OSM } from "ol/source";
 import { MapContext, map } from "../context/MapContext";
-import KommunerCheckbox from "../kommuner/KommunerCheckbox";
 import Layer from "ol/layer/Layer";
 import KommunerAside from "../kommuner/KommunerAside";
-import FylkeCheckbox from "../fylke/FylkeCheckbox";
 import FylkeAside from "../fylke/FylkeAside";
-import SchoolLayerCheckbox from "../schools/SchoolLayerCheckbox";
 import SchoolAside from "../schools/SchoolAside";
-import FocusUser from "./FocusUser";
+import NavBar from "../shared/Navbar";
 const MapApplication = () => {
   const mapRef = useRef() as MutableRefObject<HTMLDivElement>;
   const [layers, setLayers] = useState<Layer[]>([
@@ -20,15 +17,7 @@ const MapApplication = () => {
   useEffect(() => map.setTarget(mapRef.current), []);
   return (
     <MapContext.Provider value={{ map, setLayers, layers }}>
-      <header>
-        <h1>Lecture 5 Map</h1>
-      </header>
-      <nav>
-        <FocusUser />
-        <KommunerCheckbox />
-        <FylkeCheckbox />
-        <SchoolLayerCheckbox />
-      </nav>
+      <NavBar />
       <main>
         <div ref={mapRef}></div>
         <KommunerAside />
