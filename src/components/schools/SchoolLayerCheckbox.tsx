@@ -1,9 +1,9 @@
 import React from "react";
-const SchoolLayerCheck = () => {
+const SchoolLayerCheckbox = () => {
   return (
     <>
       <div></div>
     </>
   );
 };
-export default SchoolLayerCheck;
+export default SchoolLayerCheckbox;
