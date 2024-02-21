@@ -9,6 +9,7 @@ import FylkeCheckbox from "../fylke/FylkeCheckbox";
 import FylkeAside from "../fylke/FylkeAside";
 import HandleFocusUser from "./HandleFocusUser";
 import SchoolLayerCheckbox from "../schools/SchoolLayerCheckbox";
+import SchoolAside from "../schools/SchoolAside";
 
 const MapApplication = () => {
   const mapRef = useRef() as MutableRefObject<HTMLDivElement>;
@@ -29,12 +30,13 @@ const MapApplication = () => {
         </a>
         <KommunerCheckbox />
         <FylkeCheckbox />
+        <SchoolLayerCheckbox />
       </nav>
       <main>
         <div ref={mapRef}></div>
         <KommunerAside />
         <FylkeAside />
-        <SchoolLayerCheckbox />
+        <SchoolAside />
       </main>
     </MapContext.Provider>
   );
