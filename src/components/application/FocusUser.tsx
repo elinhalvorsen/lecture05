@@ -9,7 +9,7 @@ const FocusUser = () => {
       const { latitude, longitude } = pos.coords;
       map.getView().animate({
         center: [longitude, latitude],
-        zoom: 8,
+        zoom: 12,
       });
     });
   };
