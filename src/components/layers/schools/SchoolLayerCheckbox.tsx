@@ -4,7 +4,7 @@ import useLayer from "../../map/useLayer";
 import VectorLayer from "ol/layer/Vector";
 import VectorSource from "ol/source/Vector";
 import { GeoJSON } from "ol/format";
-import { Style, Stroke, Fill, Circle } from "ol/style.js";
+import { Style, Stroke, Fill, Circle, Text } from "ol/style.js";
 import { Feature, MapBrowserEvent } from "ol";
 import { Point } from "ol/geom";
 import { FeatureLike } from "ol/Feature";
@@ -40,6 +40,13 @@ const activeSchoolStyle = (f: FeatureLike) => {
         color: school.eierforhold === "Offentlig" ? "blue" : "purple",
       }),
       radius: 3 + school.antall_elever / 150,
+    }),
+    text: new Text({
+      text: school.navn,
+      offsetY: -15,
+      font: "bold 14px sans-serif",
+      fill: new Fill({ color: "black" }),
+      stroke: new Stroke({ color: "white", width: 2 }),
     }),
   });
 };
@@ -96,6 +103,7 @@ const SchoolLayerCheckbox = () => {
         onChange={(e) => setChecked(e.target.checked)}
         isChecked={checked}
       />
+      {activeFeature && "(" + activeFeature.getProperties().navn + ")"}
     </>
   );
 };

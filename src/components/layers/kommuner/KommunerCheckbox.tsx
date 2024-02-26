@@ -5,15 +5,17 @@ import { GeoJSON } from "ol/format";
 import ToogleCheckbox from "../../shared/ToogleCheckbox";
 import useLayer from "../../map/useLayer";
 
-const kommuneLayer = new VectorLayer({
-  className: "kommuner",
-  source: new VectorSource({
-    url: "/lecture05/kommuner.json",
-    format: new GeoJSON(),
-  }),
-});
 const KommunerCheckbox = () => {
   const [checked, setChecked] = useState(false);
+
+  const kommuneLayer = new VectorLayer({
+    className: "kommuner",
+    source: new VectorSource({
+      url: "/lecture05/kommuner.json",
+      format: new GeoJSON(),
+    }),
+  });
+
   useLayer(kommuneLayer, checked);
 
   return (
