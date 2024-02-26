@@ -11,7 +11,7 @@ const NavBar = () => {
         <nav className="navbar navbar-expand-lg">
           <img id="map-icon" src="/lecture05/map.jpeg" />
           <div className="container-fluid justify-content-between">
-            <div className="justify-content-start">
+            <div>
               <ul className="navbar-nav ms-auto">
                 <li className="nav-item nav-link">
                   <FocusUser />

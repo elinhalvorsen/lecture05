@@ -20,11 +20,11 @@ const MapApplication = () => {
     () => new TileLayer({ source: new OSM() }),
   );
   const [vectorLayers, setVectorLayers] = useState<Layer[]>([]);
-  const allLayers = useMemo(
+  const layers = useMemo(
     () => [baseLayer, ...vectorLayers],
     [baseLayer, vectorLayers],
   );
-  useEffect(() => map.setLayers(allLayers), [allLayers]);
+  useEffect(() => map.setLayers(layers), [layers]);
   useEffect(() => map.setTarget(mapRef.current), []);
   return (
     <MapContext.Provider

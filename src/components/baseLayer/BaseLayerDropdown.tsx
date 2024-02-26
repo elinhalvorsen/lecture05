@@ -30,10 +30,11 @@ const BaseLyerDropdown = () => {
         className="form-select"
       >
         {baseLayerOptions.map(({ id, name }) => (
-          <option value={id}>{name}</option>
+          <option key={id} value={id}>
+            {name}
+          </option>
         ))}
       </select>
-      {selectedLayer.name}
     </div>
   );
 };
