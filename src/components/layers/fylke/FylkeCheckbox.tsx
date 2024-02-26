@@ -14,6 +14,7 @@ const fylkeLayer = new VectorLayer({
 });
 const FylkeCheckbox = () => {
   const [checked, setChecked] = useState(false);
+  const [actionTabAside, setActionTabAside] = useState(false);
   useLayer(fylkeLayer, checked);
 
   return (

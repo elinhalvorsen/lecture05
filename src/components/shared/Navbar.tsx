@@ -6,14 +6,15 @@ import SchoolLayerCheckbox from "../layers/schools/SchoolLayerCheckbox";
 const NavBar = () => {
   return (
     <>
-      <header>
-        <h1>Lecture 5 Map</h1>
-      </header>
+      <header></header>
       <nav>
-        <FocusUser />
-        <KommunerCheckbox />
-        <FylkeCheckbox />
-        <SchoolLayerCheckbox />
+        <div>
+          <h1>Lecture 5 Map</h1>
+          <FocusUser />
+          <KommunerCheckbox />
+          <FylkeCheckbox />
+          <SchoolLayerCheckbox />
+        </div>
       </nav>
     </>
   );

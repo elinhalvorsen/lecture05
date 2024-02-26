@@ -17,9 +17,7 @@ const FocusUser = () => {
   return (
     <>
       <div>
-        <a href={"#"} onClick={handleFocusUser}>
-          Focus on me
-        </a>
+        <button onClick={handleFocusUser}>Focus on me</button>
       </div>
     </>
   );

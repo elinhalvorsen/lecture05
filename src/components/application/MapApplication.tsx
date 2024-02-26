@@ -7,6 +7,7 @@ import KommunerAside from "../layers/kommuner/KommunerAside";
 import FylkeAside from "../layers/fylke/FylkeAside";
 import SchoolAside from "../layers/schools/SchoolAside";
 import NavBar from "../shared/Navbar";
+
 const MapApplication = () => {
   const mapRef = useRef() as MutableRefObject<HTMLDivElement>;
   const [layers, setLayers] = useState<Layer[]>([
