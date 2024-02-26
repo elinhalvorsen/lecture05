@@ -28,12 +28,7 @@ const MapApplication = () => {
   useEffect(() => map.setTarget(mapRef.current), []);
   return (
     <MapContext.Provider
-      value={{
-        map,
-        layers: vectorLayers,
-        setLayers: setVectorLayers,
-        setBaseLayer,
-      }}
+      value={{ map, vectorLayers, setVectorLayers, setBaseLayer }}
     >
       <NavBar />
       <main>

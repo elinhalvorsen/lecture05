@@ -22,14 +22,14 @@ const StedsNavn = (navn: Stedsnavn[]) => {
 };
 
 const useFylkeFeatures = () => {
-  const { layers, map } = useContext(MapContext);
+  const { vectorLayers, map } = useContext(MapContext);
 
   const [features, setFeature] = useState<FylkeFeatures[]>();
   const [viewExtent, setViewExtent] = useState(
     map.getView().getViewStateAndExtent().extent,
   );
 
-  const layer = layers.find(
+  const layer = vectorLayers.find(
     (l) => l.getClassName() === "fylker",
   ) as FylkeVectorLayer;
 

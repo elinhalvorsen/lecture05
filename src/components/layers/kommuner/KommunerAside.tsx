@@ -23,9 +23,9 @@ const KommunerAside = () => {
     return navn.find((n) => n.sprak === "nor")?.navn;
   };
   const useKommuneFeatures = () => {
-    const { layers, map } = useContext(MapContext);
+    const { vectorLayers, map } = useContext(MapContext);
 
-    const layer = layers.find(
+    const layer = vectorLayers.find(
       (l) => l.getClassName() === "kommuner",
     ) as KommuneVectorLayer;
 

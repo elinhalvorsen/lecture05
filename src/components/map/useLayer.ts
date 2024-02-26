@@ -2,13 +2,13 @@ import { useContext, useEffect } from "react";
 import { MapContext } from "./MapContext";
 import Layer from "ol/layer/Layer";
 const useLayer = (layer: Layer, checked: boolean) => {
-  const { setLayers } = useContext(MapContext);
+  const { setVectorLayers } = useContext(MapContext);
 
   useEffect(() => {
     if (checked) {
-      setLayers((old) => [...old, layer]);
+      setVectorLayers((old) => [...old, layer]);
     }
-    return () => setLayers((old) => old.filter((l) => l !== layer));
+    return () => setVectorLayers((old) => old.filter((l) => l !== layer));
   }, [checked]);
 };
 export default useLayer;
