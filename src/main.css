@@ -12,19 +12,6 @@ main {
   grid-template-columns: 1fr auto auto;
 }
 
-main aside {
-  display: grid;
-  grid-template-columns: 0;
-  transition: grid-template-columns 0.5 ease-in-out;
-  overflow-x: clip;
-  max-height: 100vh;
-  overflow-y: auto;
-}
-main aside.visable {
-  grid-template-columns: auto;
-}
-
-main aside > * {
-  padding: 0.5rem;
-  min-width: 25ch;
+#map-icon {
+  width: 80px;
 }

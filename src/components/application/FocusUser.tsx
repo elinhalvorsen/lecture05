@@ -17,7 +17,9 @@ const FocusUser = () => {
   return (
     <>
       <div>
-        <button onClick={handleFocusUser}>Focus on me</button>
+        <button className="btn btn-primary" onClick={handleFocusUser}>
+          Focus on me
+        </button>
       </div>
     </>
   );

@@ -21,8 +21,8 @@ const FylkeCheckbox = () => {
   return (
     <>
       <ToogleCheckbox
-        lableOff={"Hide"}
-        lableOn={"Show"}
+        lableOff={"Hide "}
+        lableOn={"Show "}
         isChecked={checked}
         onChange={(e) => setChecked(e.target.checked)}
         title={" Fylker"}

@@ -15,13 +15,17 @@ const ToogleCheckbox = ({
   onChange,
 }: IToogleCheckbox) => {
   return (
-    <>
-      <label>
-        <input type="checkbox" checked={isChecked} onChange={onChange} />
-        {isChecked ? lableOff : lableOn}
-        {title}
-      </label>
-    </>
+    <div className="form-check form-switch">
+      <input
+        className="form-check-input"
+        type="checkbox"
+        id="flexSwitchCheckDefault"
+        checked={isChecked}
+        onChange={onChange}
+      />
+      {isChecked ? lableOff : lableOn}
+      <label className="form-check-label">{title}</label>
+    </div>
   );
 };
 export default ToogleCheckbox;

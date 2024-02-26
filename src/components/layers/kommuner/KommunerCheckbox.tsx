@@ -21,9 +21,9 @@ const KommunerCheckbox = () => {
   return (
     <>
       <ToogleCheckbox
-        lableOff={"Hide"}
-        lableOn={"Show"}
-        title={" kommuner"}
+        lableOff={"Hide "}
+        lableOn={"Show "}
+        title={"kommuner"}
         isChecked={checked}
         onChange={(e) => setChecked(e.target.checked)}
       />
