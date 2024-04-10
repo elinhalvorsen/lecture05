@@ -30,6 +30,7 @@ const schoolStyle = (f: FeatureLike) => {
     }),
   });
 };
+
 const activeSchoolStyle = (f: FeatureLike) => {
   const feacture = f as SchoolFeature;
   const school = feacture.getProperties();
